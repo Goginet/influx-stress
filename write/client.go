@@ -51,33 +51,6 @@ func NewClient(cfg ClientConfig) Client {
 }
 
 func (c *client) Create(command string) error {
-	if command == "" {
-		command = "CREATE DATABASE " + c.cfg.Database
-	}
-
-	vals := url.Values{}
-	vals.Set("q", command)
-	u, err := url.Parse(c.cfg.BaseURL)
-	if err != nil {
-		return err
-	}
-	if c.cfg.User != "" && c.cfg.Pass != "" {
-		u.User = url.UserPassword(c.cfg.User, c.cfg.Pass)
-	}
-	resp, err := http.PostForm(u.String()+"/query", vals)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != 200 {
-		body, _ := ioutil.ReadAll(resp.Body)
-		return fmt.Errorf(
-			"Bad status code during Create(%s): %d, body: %s",
-			command, resp.StatusCode, string(body),
-		)
-	}
-
 	return nil
 }
 
