@@ -4,7 +4,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/influxdata/influx-stress/lineprotocol"
+	"github.com/Goginet/influx-stress/lineprotocol"
 )
 
 // The point struct implements the lineprotocol.Point interface.

@@ -11,10 +11,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/influxdata/influx-stress/lineprotocol"
-	"github.com/influxdata/influx-stress/point"
-	"github.com/influxdata/influx-stress/stress"
-	"github.com/influxdata/influx-stress/write"
+	"github.com/Goginet/influx-stress/lineprotocol"
+	"github.com/Goginet/influx-stress/point"
+	"github.com/Goginet/influx-stress/stress"
+	"github.com/Goginet/influx-stress/write"
 	"github.com/spf13/cobra"
 )
 
